@@ -33,6 +33,95 @@ for (let n = 2; n <= 100; n++) { // n is the number to be checked
     }
 
     if (isPrime) { // if n is prime
-        console.log(n , "is a prime number"); // print n
+        console.log(n, "is a prime number"); // print n
     }
 }
+
+
+console.log("---------------------------------------");
+
+// Smart Testing System
+
+// Login Function
+
+function login() {
+    let email = "a@gmail.com"; // predefined email
+    let pass = "1234"; // predefined password
+
+    let attempts = 3; // number of attempts
+
+    while (attempts > 0) { // while attempts less than 3
+        let userEmail = prompt("Enter Email:"); // get user email
+        let userPass = prompt("Enter Password:"); // get user password
+
+        if (userEmail === email && userPass === pass) { // check if email and password match
+            alert("Login success!"); // alert success
+            return true; // return true
+        }
+
+        attempts--; // decrement attempts
+        alert("Wrong! Attempts left: " + attempts); // alert wrong and attempts left
+    }
+
+
+    // count down from 30 to 0 seconds i
+    let count = 30;
+
+    let timer = setInterval(() => {
+        console.log("Try again after: " + count + " seconds");
+        count--;
+
+        if (count < 0) {
+            clearInterval(timer);
+            alert("You can try again now");
+            startSystem(); // restart the login process
+        }
+    }, 1000);
+
+    
+
+}
+
+// Random question generator
+
+function randomQuestion() {
+    let num1 = Math.floor(Math.random() * 10); // random number between 0 and 9
+    let num2 = Math.floor(Math.random() * 10); // random number between 0 and 9
+
+    let operators = ["+", "-", "*"]; // array of operators
+    let op = operators[Math.floor(Math.random() * operators.length)]; // random operator
+
+    let question = `${num1} ${op} ${num2}`; // create question string
+    let answer = eval(question); // evaluate the question to get the answer
+
+    return { question, answer }; // return question and answer
+}
+
+// Quiz Function
+function quiz() {
+    let total = Number(prompt("How many questions?")); // get total number of questions
+    let score = 0; // initialize score
+
+    for (let i = 0; i < total; i++) { // loop for total number of questions
+        let q = randomQuestion(); // get random question
+
+        let userAnswer = Number(prompt(q.question + " = ?")); // get user answer
+
+        if (userAnswer === q.answer) { // check if answer is correct
+            score++; // increment score
+        }
+    }
+
+    alert("Your score: " + score + " / " + total); // display final score
+}
+
+
+// Start System Function
+function startSystem() {
+    if (login()) {
+        quiz(); // start the quiz if login is successful
+    }
+}
+
+// Start the system the first time
+startSystem();
