@@ -64,19 +64,19 @@ function login() {
     }
 
 
-    // count down from 30 to 0 seconds i
+    // count down from 30 to 0 seconds 
     let count = 30;
 
-    let timer = setInterval(() => {
+    let timer = setInterval(() => {  // set interval for countdown
         console.log("Try again after: " + count + " seconds");
-        count--;
+        count--; // decrement count
 
         if (count < 0) {
-            clearInterval(timer);
-            alert("You can try again now");
+            clearInterval(timer); // clear interval
+            alert("You can try again now"); //  alert user
             startSystem(); // restart the login process
         }
-    }, 1000);
+    }, 1000); // interval of 1 second
 
     
 
