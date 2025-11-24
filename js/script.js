@@ -88,7 +88,7 @@ function randomQuestion() {
     let num1 = Math.floor(Math.random() * 10); // random number between 0 and 9
     let num2 = Math.floor(Math.random() * 10); // random number between 0 and 9
 
-    let operators = ["+", "-", "*"]; // array of operators
+    let operators = ["+", "-", "*" ,"/","**","%"]; // array of operators
     let op = operators[Math.floor(Math.random() * operators.length)]; // random operator
 
     let question = `${num1} ${op} ${num2}`; // create question string
