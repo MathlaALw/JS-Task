@@ -1,13 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <script src="./js/script.js" ></script> -->
-    <script src="./js/Assignment-2.js" ></script>
+   
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
 </head>
+
 <body>
-    
+
+    <div class="container">
+
+        <h1>JavaScript Assignment-3</h1>
+        <form id="form" class="py-4">
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input name="email" value="" id="email" type="email" class="form-control"placeholder="example@gmail.com">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="pass">Password :</label>
+                <input name="pass" value="" id="pass" type="password" class="form-control" placeholder="Password">
+            </div>
+
+
+        </form>
+
+        <button id="btn" class="btn btn-outline-success">Login</button>
+        <br><br>
+
+
+        <div id="error-msg" class="alert alert-danger d-none">
+            <p>Invalid Email or password</p>
+        </div>
+            <!-- d-none -> display none ( hidden )-->
+        <div id="success-msg" class="alert alert-success d-none">
+            <p>Successfull login</p>
+        </div>
+
+
+        <h1 id="text"></h1>
+        <h1 id="h2"></h1>
+
+
+    </div>
+
+
+
+
+     <!-- <script src="./js/script.js" ></script> -->
+    <!-- <script src="./js/Assignment-2.js" ></script> -->
+    <script src="./js/Assiginment-3.js"></script>
 </body>
+
 </html>
